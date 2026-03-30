@@ -1,6 +1,6 @@
 # homebrew-tap
 
-Homebrew tap for [ramus](https://github.com/1337raspberry/ramus) —  A highly opinionated, genre-first music player for Plex on macOS. 
+Homebrew tap for [ramus](https://github.com/1337raspberry/ramus) —  A highly opinionated, genre-first music player for <a href="https://www.plex.tv">Plex</a> on macOS.
 
 ## Install
 
