@@ -11,18 +11,18 @@ class Pulsr < Formula
 
     on_arm do
       url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.0/pulsr-0.1.0-macos-apple-silicon.tar.gz"
-      sha256 "f1b2be2dabe2ce7afab31c6d2fc148898ab2b9edd36c534d489e47eb395c0d8a"
+      sha256 "5177dc3275b443ccc59b30147b249b4ad795ed7dc6e2517955021837a5a48325"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.0/pulsr-0.1.0-linux-x86_64.tar.gz"
-      sha256 "9218629cf3aee49890ff6a71dd2e4ebe8eb510a747e4966a3526c15c6d374a38"
+      sha256 "193b60631089ba768e8a655419888965be53e2a73f8cea2b85200cb3318b3a2d"
     end
     on_arm do
       url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.0/pulsr-0.1.0-linux-arm64.tar.gz"
-      sha256 "d77bc45aa21cf1bb6d6d480d57b0473833115046d029a9ec8a44fe7275161893"
+      sha256 "e304c22bc73cec2ee41e8414448a223fbdab3912a63dce73048f466de522abd0"
     end
   end
 

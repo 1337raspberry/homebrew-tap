@@ -14,6 +14,14 @@ if [ $# -ne 1 ]; then
 fi
 
 version=${1#v}
+# The version is written into the formula as it is.
+case "$version" in
+  *[!0-9A-Za-z.-]*) version= ;;
+esac
+if ! printf '%s' "$version" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?$'; then
+  echo "$1 is not a version" >&2
+  exit 2
+fi
 repo=1337raspberry/pulsr
 root=$(cd "$(dirname "$0")/.." && pwd)
 
