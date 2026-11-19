@@ -1,0 +1,54 @@
+name: Update pulsr
+
+# Points the formula at a published release of pulsr. Run it by hand once
+# the release is out:
+#
+#   gh workflow run update.yml -R 1337raspberry/homebrew-tap -f version=0.2.0
+#
+# The hashes come from the .sha256 files attached to the release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The released version, such as 0.2.0'
+        required: true
+        type: string
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Update the formula
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      VERSION: ${{ inputs.version }}
+    steps:
+      # The token is kept for the push at the end.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Write the formula
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          scripts/update-formula.sh "$VERSION"
+          ruby -c Formula/pulsr.rb
+
+      - name: Commit
+        run: |
+          if git diff --quiet -- Formula/pulsr.rb && git ls-files --error-unmatch Formula/pulsr.rb >/dev/null 2>&1; then
+            echo "the formula is already at ${VERSION#v}"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add Formula/pulsr.rb
+          git commit -m "update pulsr to ${VERSION#v}"
+          git push
