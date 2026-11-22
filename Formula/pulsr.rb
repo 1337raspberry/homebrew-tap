@@ -10,19 +10,19 @@ class Pulsr < Formula
     depends_on macos: :sonoma
 
     on_arm do
-      url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.2/pulsr-0.1.2-macos-apple-silicon.tar.gz"
-      sha256 "fb3456c7d305ac2d373601c9eb3e0ae5bf2a4035444625aee94bf5e7b27baa26"
+      url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.3/pulsr-0.1.3-macos-apple-silicon.tar.gz"
+      sha256 "374798fc6aee50e74dd6e3b65144756420f8f6cce78f9d494170f5be4771601a"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.2/pulsr-0.1.2-linux-x86_64.tar.gz"
-      sha256 "5568c70ed15c408927b166c7a59625c3fecf933606e0efd3ea023c9eb8af5e5a"
+      url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.3/pulsr-0.1.3-linux-x86_64.tar.gz"
+      sha256 "40433abdfc9eea02e347316628121979319898d74c46bfaea55073f14862d5f5"
     end
     on_arm do
-      url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.2/pulsr-0.1.2-linux-arm64.tar.gz"
-      sha256 "81c52a034c9b83140520b41d0f3d12cc30c648cf748ae6c8b5fd44c669fc0ab7"
+      url "https://github.com/1337raspberry/pulsr/releases/download/v0.1.3/pulsr-0.1.3-linux-arm64.tar.gz"
+      sha256 "8a9642c96924377b029cccd114c4b0bc2cb084d09ffb9b9d5485475ab2ef6718"
     end
   end
 
